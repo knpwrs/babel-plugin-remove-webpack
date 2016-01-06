@@ -51,12 +51,12 @@ export default function ({ types: t }) {
             return;
           }
           // Are the first two arguments the expected type?
-          if (!(t.isArrayExpression(args[0]) && t.isFunctionExpression(args[1]))) {
+          const [arr, fn] = args;
+          if (!(t.isArrayExpression(arr) && t.isFunctionExpression(fn))) {
             return;
           }
           // TRANSFORM!
           // Remove require.ensure wrapper.
-          const [, fn] = args;
           fn.params = [];
           path.replaceWith(t.callExpression(fn, []));
         }
