@@ -1,5 +1,7 @@
 # babel-plugin-remove-webpack
 
+[![Build Status](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack.svg)](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack)
+
 Removes [webpack]-specific functions from JavaScript code.
 
 ## `require.ensure`
