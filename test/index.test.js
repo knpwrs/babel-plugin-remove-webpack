@@ -77,3 +77,11 @@ test('remove require.ensure with non-empty array and name', t => {
   t.equal(output, expected);
   t.end();
 });
+
+test('remove require.include', t => {
+  const input = clean`require.include('a')`;
+  const output = run(input);
+  const expected = '';
+  t.equal(output, expected);
+  t.end();
+});

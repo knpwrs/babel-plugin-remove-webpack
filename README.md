@@ -21,12 +21,25 @@ require.ensure(['a', 'b', 'c'], function () {
   const c = require('c');
 })();
 ```
+
+## `require.include`
+
+`require.include` is removed entirely.
+
+```js
+// Before
+require.include('a');
+
+// After
+
+```
+
 ## Motivation
 
-`require.ensure` is great for code-splitting but can cause issues when writing
-universal JavaScript. The typical solution is to use a synchronous
-`require.ensure` polyfill. In order for [webpack] code splitting to work properly
-this polyfill has to be defined in each file where `require.ensure` is used.
+`require.ensure` and `require.include` are great for code-splitting; however,
+they can cause issues when writing universal JavaScript. The typical solution is
+to use synchronous polyfills. In order for [webpack] code splitting to work
+properly these polyfills have to be defined in each file where they are used.
 
 This plugin makes it possible to run code which uses [webpack]-specific
 functions without having to manually polyfill those functions.
