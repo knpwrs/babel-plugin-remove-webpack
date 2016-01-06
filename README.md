@@ -4,7 +4,7 @@
 
 Removes [webpack]-specific functions from JavaScript code.
 
-## `require.ensure`
+## [`require.ensure`]
 
 `require.ensure` is replaced with self-executing anonymous functions.
 
@@ -24,7 +24,7 @@ require.ensure(['a', 'b', 'c'], function () {
 })();
 ```
 
-## `require.include`
+## [`require.include`]
 
 `require.include` is removed entirely.
 
@@ -38,10 +38,11 @@ require.include('a');
 
 ## Motivation
 
-`require.ensure` and `require.include` are great for code-splitting; however,
-they can cause issues when writing universal JavaScript. The typical solution is
-to use synchronous polyfills. In order for [webpack] code splitting to work
-properly these polyfills have to be defined in each file where they are used.
+[`require.ensure`] and [`require.include`] are great for [code splitting][cs];
+however, they can cause issues when writing universal JavaScript. The typical
+solution is to use synchronous polyfills. In order for [webpack] code splitting
+to work properly these polyfills have to be defined in each file where they are
+used.
 
 This plugin makes it possible to run code which uses [webpack]-specific
 functions without having to manually polyfill those functions.
@@ -51,3 +52,6 @@ functions without having to manually polyfill those functions.
 MIT
 
 [webpack]: http://webpack.github.io/ "webpack"
+[cs]: https://webpack.github.io/docs/code-splitting.html "Code Splitting"
+[`require.ensure`]: https://webpack.github.io/docs/code-splitting.html#require-ensure "`require.ensure`"
+[`require.include`]: https://webpack.github.io/docs/code-splitting.html#require-include "`require.include`"
