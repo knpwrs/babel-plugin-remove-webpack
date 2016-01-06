@@ -1,6 +1,6 @@
 # babel-plugin-remove-webpack
 
-![Dependency Status](https://david-dm.org/knpwrs/babel-plugin-remove-webpack.svg) [![Build Status](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack.svg)](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack)
+[![Dependency Status](https://david-dm.org/knpwrs/babel-plugin-remove-webpack.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack) [![devDependency Status](https://david-dm.org/knpwrs/babel-plugin-remove-webpack/dev-status.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack#info=devDependencies) [![Build Status](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack.svg)](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack)
 
 Removes [webpack]-specific functions from JavaScript code.
 
