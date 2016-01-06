@@ -78,6 +78,54 @@ test('remove require.ensure with non-empty array and name', t => {
   t.end();
 });
 
+test('remove require.ensure with empty array and chunk', t => {
+  const input = clean`require.ensure([], function (require) {
+    /* foo */
+  }, 'foo');`;
+  const output = run(input);
+  const expected = clean`(function () {
+    /* foo */
+  })();`;
+  t.equal(output, expected);
+  t.end();
+});
+
+test('remove require.ensure with empty array and name and chunk', t => {
+  const input = clean`require.ensure([], function foo(require) {
+    /* foo */
+  }, 'foo');`;
+  const output = run(input);
+  const expected = clean`(function foo() {
+    /* foo */
+  })();`;
+  t.equal(output, expected);
+  t.end();
+});
+
+test('remove require.ensure with non-empty array and chunk', t => {
+  const input = clean`require.ensure(['a', 'b', 'c'], function (require) {
+    /* foo */
+  }, 'foo');`;
+  const output = run(input);
+  const expected = clean`(function () {
+    /* foo */
+  })();`;
+  t.equal(output, expected);
+  t.end();
+});
+
+test('remove require.ensure with non-empty array and name and chunk', t => {
+  const input = clean`require.ensure(['a', 'b', 'c'], function foo(require) {
+    /* foo */
+  }, 'foo');`;
+  const output = run(input);
+  const expected = clean`(function foo() {
+    /* foo */
+  })();`;
+  t.equal(output, expected);
+  t.end();
+});
+
 test('remove require.include', t => {
   const input = clean`require.include('a')`;
   const output = run(input);
