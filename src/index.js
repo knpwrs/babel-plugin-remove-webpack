@@ -56,7 +56,9 @@ export default function ({ types: t }) {
           }
           // TRANSFORM!
           // Remove require.ensure wrapper.
-          path.replaceWith(t.callExpression(args[1], []));
+          const [, fn] = args;
+          fn.params = [];
+          path.replaceWith(t.callExpression(fn, []));
         }
       },
     },

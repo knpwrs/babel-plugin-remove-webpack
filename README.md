@@ -10,7 +10,7 @@ Removes [webpack]-specific functions from JavaScript code.
 
 ```js
 // Before
-require.ensure(['a', 'b', 'c'], function () {
+require.ensure(['a', 'b', 'c'], function (require) {
   const a = require('a');
   const b = require('b');
   const c = require('c');
