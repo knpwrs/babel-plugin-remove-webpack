@@ -1,6 +1,11 @@
 # babel-plugin-remove-webpack
 
-[![Dependency Status](https://david-dm.org/knpwrs/babel-plugin-remove-webpack.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack) [![devDependency Status](https://david-dm.org/knpwrs/babel-plugin-remove-webpack/dev-status.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack#info=devDependencies) [![Build Status](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack.svg)](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack)
+[![Dependency Status](https://img.shields.io/david/knpwrs/babel-plugin-remove-webpack.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack)
+[![devDependency Status](https://img.shields.io/david/dev/knpwrs/babel-plugin-remove-webpack.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/knpwrs/babel-plugin-remove-webpack.svg)](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack)
+[![Npm Version](https://img.shields.io/npm/v/babel-plugin-remove-webpack.svg)](https://www.npmjs.com/package/babel-plugin-remove-webpack)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Badges](https://img.shields.io/badge/badges-6-orange.svg)](http://shields.io/)
 
 Removes [webpack]-specific functions from JavaScript code.
 
