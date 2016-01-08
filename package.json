@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-remove-webpack",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Removes webpack-specific functions from JavaScript code.",
   "main": "lib/index.js",
   "scripts": {
