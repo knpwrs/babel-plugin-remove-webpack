@@ -30,6 +30,26 @@ test('keep require.ensure with name when arguments do not match', t => {
   t.end();
 });
 
+test('keep require.ensure when environment variable WEBPACK is true', t => {
+  process.env.WEBPACK = 'true';
+  const input = clean`require.ensure([], function (require) {
+    /* foo */
+  });`;
+  const output = run(input);
+  t.equal(output, input);
+  delete process.env.WEBPACK;
+  t.end();
+});
+
+test('keep require.include when environment variable WEBPACK is true', t => {
+  process.env.WEBPACK = 'true';
+  const input = clean`require.include('a');`;
+  const output = run(input);
+  t.equal(output, input);
+  delete process.env.WEBPACK;
+  t.end();
+});
+
 test('remove require.ensure with empty array', t => {
   const input = clean`require.ensure([], function (require) {
     /* foo */
@@ -127,7 +147,7 @@ test('remove require.ensure with non-empty array and name and chunk', t => {
 });
 
 test('remove require.include', t => {
-  const input = clean`require.include('a')`;
+  const input = clean`require.include('a');`;
   const output = run(input);
   const expected = '';
   t.equal(output, expected);

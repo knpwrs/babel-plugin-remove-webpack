@@ -62,6 +62,12 @@ targets node. Usage as such will remove [`require.ensure`] and
 [`require.include`] calls as shown above so you can run your client code on the
 server without shims.
 
+### Single Configuration
+
+If you don't want to configure Babel multiple times, you can set the `WEBPACK`
+environment variable to `true`. When `process.env.WEBPACK === 'true'` is `true`
+this plugin skips all transformations.
+
 ## License
 
 MIT

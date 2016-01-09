@@ -25,6 +25,11 @@ export default function ({ types: t }) {
        * @param {Object} path The path object from Babel.
        */
       CallExpression(path) {
+        // Check environment variable to skip.
+        if (process.env.WEBPACK === 'true') {
+          return;
+        }
+        // Continue as normal.
         const { node } = path;
         const { arguments: args } = node;
         
