@@ -11,7 +11,7 @@ Removes [webpack]-specific functions from JavaScript code.
 
 ## [`require.ensure`]
 
-`require.ensure` is replaced with self-executing anonymous functions.
+`require.ensure` is replaced with an [IIFE].
 
 ```js
 // Before
@@ -69,5 +69,6 @@ MIT
 [webpack]: http://webpack.github.io/ "webpack"
 [cs]: https://webpack.github.io/docs/code-splitting.html "Code Splitting"
 [`babel-register`]: https://www.npmjs.com/package/babel-register "`babel-register`"
+[IIFE]: https://en.wikipedia.org/wiki/Immediately-invoked_function_expression "Immediately-Invoked Function Expression"
 [`require.ensure`]: https://webpack.github.io/docs/code-splitting.html#require-ensure "`require.ensure`"
 [`require.include`]: https://webpack.github.io/docs/code-splitting.html#require-include "`require.include`"
