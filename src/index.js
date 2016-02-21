@@ -11,6 +11,11 @@ function isMemberCall({ callee }, obj, prop) {
     && callee.property.name === prop;
 }
 
+const validPossibleFunctionTypes = [
+  'ArrowFunctionExpression',
+  'FunctionExpression',
+];
+
 /**
  * Babel plugin which replaces `require.ensure` calls with self-executing anonymous functions.
  * @param {Object} babel The current babel object
@@ -27,7 +32,7 @@ export default function ({ types: t }) {
       CallExpression(path) {
         const { node } = path;
         const { arguments: args } = node;
-        
+
         // Is this a require.include call?
         if (isMemberCall(node, 'require', 'include')) {
           // Do we have exactly one argument?
@@ -43,7 +48,7 @@ export default function ({ types: t }) {
           path.remove();
           return;
         }
-        
+
         // Is this a require.ensure call?
         if (isMemberCall(node, 'require', 'ensure')) {
           // Do we have at least two arguments?
@@ -52,7 +57,7 @@ export default function ({ types: t }) {
           }
           // Are the first two arguments the expected type?
           const [arr, fn] = args;
-          if (!(t.isArrayExpression(arr) && t.isFunctionExpression(fn))) {
+          if (!(t.isArrayExpression(arr) && validPossibleFunctionTypes.indexOf(fn.type) !== -1)) {
             return;
           }
           // TRANSFORM!
