@@ -126,6 +126,18 @@ test('remove require.ensure with non-empty array and name and chunk', t => {
   t.end();
 });
 
+test('remove require.ensure with non-empty array and arrow function', t => {
+  const input = clean`require.ensure(['a', 'b', 'c'], (require) => {
+    /* foo */
+  });`;
+  const output = run(input);
+  const expected = clean`(() => {
+    /* foo */
+  })();`;
+  t.equal(output, expected);
+  t.end();
+});
+
 test('remove require.include', t => {
   const input = clean`require.include('a')`;
   const output = run(input);
