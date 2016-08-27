@@ -1,4 +1,4 @@
-extends: airbnb/base
+extends: airbnb-base
 parser: babel-eslint
 rules:
   no-trailing-spaces: [2, {"skipBlankLines": true}]
