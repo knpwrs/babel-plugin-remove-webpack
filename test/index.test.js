@@ -12,7 +12,7 @@ function run(code) {
   }).code]);
 }
 
-test('keep require.ensure when arguments do not match', t => {
+test('keep require.ensure when arguments do not match', (t) => {
   const input = clean`require.ensure(function (require) {
     /* foo */
   });`;
@@ -21,7 +21,7 @@ test('keep require.ensure when arguments do not match', t => {
   t.end();
 });
 
-test('keep require.ensure with name when arguments do not match', t => {
+test('keep require.ensure with name when arguments do not match', (t) => {
   const input = clean`require.ensure(function foo(require) {
     /* foo */
   });`;
@@ -30,7 +30,7 @@ test('keep require.ensure with name when arguments do not match', t => {
   t.end();
 });
 
-test('remove require.ensure with empty array', t => {
+test('remove require.ensure with empty array', (t) => {
   const input = clean`require.ensure([], function (require) {
     /* foo */
   });`;
@@ -42,7 +42,7 @@ test('remove require.ensure with empty array', t => {
   t.end();
 });
 
-test('remove require.ensure with empty array and name', t => {
+test('remove require.ensure with empty array and name', (t) => {
   const input = clean`require.ensure([], function foo(require) {
     /* foo */
   });`;
@@ -54,7 +54,7 @@ test('remove require.ensure with empty array and name', t => {
   t.end();
 });
 
-test('remove require.ensure with non-empty array', t => {
+test('remove require.ensure with non-empty array', (t) => {
   const input = clean`require.ensure(['a', 'b', 'c'], function (require) {
     /* foo */
   });`;
@@ -66,7 +66,7 @@ test('remove require.ensure with non-empty array', t => {
   t.end();
 });
 
-test('remove require.ensure with non-empty array and name', t => {
+test('remove require.ensure with non-empty array and name', (t) => {
   const input = clean`require.ensure(['a', 'b', 'c'], function foo(require) {
     /* foo */
   });`;
@@ -78,7 +78,7 @@ test('remove require.ensure with non-empty array and name', t => {
   t.end();
 });
 
-test('remove require.ensure with empty array and chunk', t => {
+test('remove require.ensure with empty array and chunk', (t) => {
   const input = clean`require.ensure([], function (require) {
     /* foo */
   }, 'foo');`;
@@ -90,7 +90,7 @@ test('remove require.ensure with empty array and chunk', t => {
   t.end();
 });
 
-test('remove require.ensure with empty array and name and chunk', t => {
+test('remove require.ensure with empty array and name and chunk', (t) => {
   const input = clean`require.ensure([], function foo(require) {
     /* foo */
   }, 'foo');`;
@@ -102,7 +102,7 @@ test('remove require.ensure with empty array and name and chunk', t => {
   t.end();
 });
 
-test('remove require.ensure with non-empty array and chunk', t => {
+test('remove require.ensure with non-empty array and chunk', (t) => {
   const input = clean`require.ensure(['a', 'b', 'c'], function (require) {
     /* foo */
   }, 'foo');`;
@@ -114,7 +114,7 @@ test('remove require.ensure with non-empty array and chunk', t => {
   t.end();
 });
 
-test('remove require.ensure with non-empty array and name and chunk', t => {
+test('remove require.ensure with non-empty array and name and chunk', (t) => {
   const input = clean`require.ensure(['a', 'b', 'c'], function foo(require) {
     /* foo */
   }, 'foo');`;
@@ -126,7 +126,7 @@ test('remove require.ensure with non-empty array and name and chunk', t => {
   t.end();
 });
 
-test('remove require.ensure with non-empty array and arrow function', t => {
+test('remove require.ensure with non-empty array and arrow function', (t) => {
   const input = clean`require.ensure(['a', 'b', 'c'], (require) => {
     /* foo */
   });`;
@@ -138,7 +138,7 @@ test('remove require.ensure with non-empty array and arrow function', t => {
   t.end();
 });
 
-test('remove require.include', t => {
+test('remove require.include', (t) => {
   const input = clean`require.include('a')`;
   const output = run(input);
   const expected = '';
