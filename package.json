@@ -5,8 +5,9 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
-    "pretest": "eslint src test",
+    "lint": "eslint src test",
     "test": "babel-node ./test/index.test.js | faucet",
+    "posttest": "npm run lint",
     "prepublish": "npm run build"
   },
   "repository": {
