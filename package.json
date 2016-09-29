@@ -30,7 +30,7 @@
     "babel-register": "^6.3.13",
     "eslint": "^3.2.2",
     "eslint-config-airbnb-base": "^8.0.0",
-    "eslint-plugin-import": "^1.15.0",
+    "eslint-plugin-import": "^2.0.0",
     "faucet": "0.0.1",
     "tape": "^4.4.0"
   }
