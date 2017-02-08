@@ -1,5 +1,7 @@
 # babel-plugin-remove-webpack
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/knpwrs/babel-plugin-remove-webpack.svg)](https://greenkeeper.io/)
+
 [![Dependency Status](https://img.shields.io/david/knpwrs/babel-plugin-remove-webpack.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack)
 [![devDependency Status](https://img.shields.io/david/dev/knpwrs/babel-plugin-remove-webpack.svg)](https://david-dm.org/knpwrs/babel-plugin-remove-webpack#info=devDependencies)
 [![Build Status](https://img.shields.io/travis/knpwrs/babel-plugin-remove-webpack.svg)](https://travis-ci.org/knpwrs/babel-plugin-remove-webpack)
